@@ -1,0 +1,55 @@
+<odoo>
+  <data>
+
+    <record id="view_form_okwfunction" model="ir.ui.view">
+        <field name="name">okwfunctionform</field>
+        <field name="model">odooknowledge.okwfunction</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name" string="Nombre"/>
+                        <field name="description" string="Técnico"/>
+                        <field name="parent_id" string="Padre"/>
+                        <field name="active" string="Activo"/>
+                        <field name="website_published" string="website_published"/>
+                        <field name="model_ids"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+ <record id="view_list_okwfunction" model="ir.ui.view">
+        <field name="name">okwfunctionlist</field>
+        <field name="model">odooknowledge.okwfunction</field>
+        <field name="arch" type="xml">
+            <tree> 
+                <field name="name" string="Nombre"/>
+                <field name="description" string=" Técnico"/>
+                <field name="parent_id" string="Padre"/>
+                <field name="active" string="Activo"/>
+                <field name="website_published"/>
+                <field name="model_ids" widget="many2many_tags" />
+            </tree>
+        </field>
+    </record>
+    <record id="function_view_search" model="ir.ui.view">
+        <field name="name">odooknowledge.okwfunction.search</field>
+        <field name="model">odooknowledge.okwfunction</field>
+        <field name="arch" type="xml">
+            <search string="function">
+                <field name="name" filter_domain="['|', ('name','ilike',self), ('model_ids','ilike',self)]" string="name"/>
+            </search>
+        </field>
+    </record>
+    <record id="action_view_okwfunction" model="ir.actions.act_window">
+      <field name="name">okwfunction</field>
+      <field name="res_model">odooknowledge.okwfunction</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_okwfunction" name="okwfunction" action="action_view_okwfunction"/>
+
+  </data>
+</odoo>

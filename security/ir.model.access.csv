@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_odooknowledge_okwmodel,access.odooknowledge.okwmodel,model_odooknowledge_okwmodel,,1,1,1,1
+access_odooknowledge_okwrepo,access.odooknowledge.okwrepo,model_odooknowledge_okwrepo,,1,1,1,1
+access_odooknowledge_okwfunction,access.odooknowledge.okwfunction,model_odooknowledge_okwfunction,,1,1,1,1
+access_odooknowledge_okwversion,access.odooknowledge.okwversion,model_odooknowledge_okwversion,,1,1,1,1
+
+

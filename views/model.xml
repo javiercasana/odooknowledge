@@ -1,0 +1,58 @@
+<odoo>
+  <data>
+
+    <record id="view_form_okwmodel" model="ir.ui.view">
+        <field name="name">okwmodelform</field>
+        <field name="model">odooknowledge.okwmodel</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name" string="Nombre"/>
+                        <field name="technical_name" string="Nombre Técnico"/>
+                        <field name="description" string="Descripcion"/>
+                        <field name="active" string="Activo"/>
+                        <field name="license" string="Licenca"/>
+                        <field name="function_ids" string="function" widget="many2many_tags" /> 
+                        <field name="version_ids" widget="many2many_tags" />
+                        <field name="repo_id" string="Repositorio"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+ <record id="view_list_okwmodel" model="ir.ui.view">
+        <field name="name">okwmodellist</field>
+        <field name="model">odooknowledge.okwmodel</field>
+        <field name="arch" type="xml">
+            <tree> 
+                <field name="name" string="Nombre"/>
+                <field name="technical_name" string="Nombre Técnico"/>
+                <field name="description" string="Descripcion"/>
+                <field name="active" invisible="1" />
+                <field name="license" string="Licenca"/>
+                <field name="version_ids" widget="many2many_tags" />
+                <field name="repo_id" string="Repositorio"/>
+            </tree>
+        </field>
+    </record>
+    <record id="model_view_search" model="ir.ui.view">
+        <field name="name">odooknowledge.okwmodel.search</field>
+        <field name="model">odooknowledge.okwmodel</field>
+        <field name="arch" type="xml">
+            <search string="model">
+                <field name="name" filter_domain="['|',('name','ilike',self), ('description','ilike',self)]" />
+            </search>
+        </field>
+    </record>
+    <record id="action_view_okwmodel" model="ir.actions.act_window">
+      <field name="name">okwmodel</field>
+      <field name="res_model">odooknowledge.okwmodel</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_okwmodel" name="okwmodel" action="action_view_okwmodel"/>
+
+  </data>
+</odoo>
