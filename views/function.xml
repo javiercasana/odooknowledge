@@ -9,7 +9,7 @@
                 <sheet>
                     <group>
                         <field name="name" string="Nombre"/>
-                        <field name="description" string="Técnico"/>
+                        <field name="description" string="Description"/>
                         <field name="parent_id" string="Padre"/>
                         <field name="active" string="Activo"/>
                         <field name="website_published" string="website_published"/>
@@ -32,7 +32,7 @@
         <field name="arch" type="xml">
             <tree> 
                 <field name="name" string="Nombre"/>
-                <field name="description" string=" Técnico"/>
+                <field name="description" string=" Description"/>
                 <field name="parent_id" string="Padre"/>
                 <field name="active" string="Activo"/>
                 <field name="website_published"/>

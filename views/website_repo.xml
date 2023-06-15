@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="website_repo" name="repo">
+                <t t-call="website.layout">
+                        <h1 style="font-weight: bold;font-size: 3rem;font-family: Helvetica, Arial, sans-serif;text-align:center;color:blue;"> ESTO ES UNA FUNCIÓN:</h1>
+                        <h3  style="text-align:center;"><img src="https://blog.sinapsis.agency/wp-content/uploads/2021/06/HERRAMIENTAS-ODOO-CRM.jpg" alt="Trulli" width="500" height="200"/></h3>
+                        <div id="wrap" class="js_blog website_blog">
+                        <br/>
+                        </div>
+                        <t t-foreach="repo_ids" t-as="repo">
+                          <t t-esc=" repo.name" />
+                        </t>
+                        <br/>
+                        <t t-foreach="repo_ids" t-as="repo">
+                          <t t-esc=" repo.url" />
+                        </t>                        
+                  </t>
+        </template>
+    </data>
+</odoo>

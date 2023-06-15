@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<odoo>
+    <data>
+        <template id="website_function_list_form" name="function_list_form" >
+                <t t-call="website.layout">
+                        <h1 style="font-weight: bold;font-size: 3rem;font-family:fantasy;text-align:center;color:blue;" t-esc=" function_id.name"/>
+                        <hr/>
+                        <h3  style="text-align:center;"><img src="https://www.cirantait.com/wp-content/uploads/2022/08/Odoo-erp-integraion-600x600.png" alt="Trulli" width="500" height="300"/></h3>
+                        <div id="wrap" class="js_blog website_blog">
+                        <br/>
+                        <img src="https://www.conectasoftware.com/wp-content/uploads/2019/12/Odoo_conector-erp-crm-1-1300x867.jpg" alt="Trulli" width="100" height="50"/>
+                        <hr/>
+                        </div>                
+                        <t t-foreach="function_id" t-as="function">
+                        <b>
+                        <h2 style="font-family: Georgia, serif;font-weight: bold;font-size: 1.5rem;color:purple;">Nombre:</h2>                                              
+                        <div>
+                        <ul>
+                          <li><t t-esc=" function.name"/></li>   <!-- la "," es lo que hace que se muestre así de raro -->
+                        </ul>
+                        </div>
+                        <br/>
+                        </b>
+                        <b>
+                        <h3 style="font-family: Georgia, serif;font-weight: bold;font-size: 1.5rem;color:purple;"> Descripción:</h3>                   
+                        <div>
+                        <ul>
+                          <li><t t-esc=" function.description" /></li>
+                        </ul>
+                        </div>
+                          <br/>
+                        </b>
+                        <b>
+                        <h4 style="font-family: Georgia, serif;font-weight: bold;font-size: 1.5rem;color:purple;">Función padre:</h4>                        
+                        <div>
+                        <ul>
+                          <a t-att-href="'/okw/function/list'">
+                          <li><t t-esc="function.parent_id.name" /><img src="https://cdn-icons-png.flaticon.com/512/60/60577.png?w=740t=st=1686124697~exp=1686125297~hmac=789acffeec6f1ad69ea546be122ea608b2ff2c292a42a17c8d8f3d6843f0e330" alt="Trulli" width="25" height="20"/></li>
+                          </a>
+                        </ul>
+                        </div> 
+                          <br/>
+                        </b>
+                        <b>
+                        <!--    
+
+                          ETIQUETA DE MÓDULOS 
+
+                        <h1 style="font-family: Georgia, serif;font-weight: bold;font-size: 1.5rem;color:purple;"> Módulos:</h1>                        
+                        <div>
+                          <span class="badge badge-primary"><t t-esc=" function.modules_ids" /></span>
+                        </div>
+
+                        -->
+                          <br/>                      
+                        </b>
+                          <br/>
+                          <br/>
+                        </t>                                    
+                </t>               
+        </template>
+    </data>
+</odoo>

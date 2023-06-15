@@ -25,7 +25,12 @@
     # always loaded
     'data': [
         'security/ir.model.access.csv',
-        'views/templates.xml',
+        'views/website_function.xml',
+        'views/website_function_list.xml',
+        'views/website_funtion_list_form.xml',
+        'views/website_funtion_list_edit.xml',
+        'views/website_model.xml',
+        'views/website_repo.xml',
         'views/model.xml',
         'views/repo.xml',
         'views/function.xml',

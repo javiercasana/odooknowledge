@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <template id="website_function_list" name="function_list">
+      <t t-call="website.layout">
+        <h1 style="font-weight: bold;font-size: 3rem;font-family:fantasy;text-align:center;color:blue;">LISTA DE FUNCIONES:</h1>
+        <hr/>
+        <h3 style="text-align:center;">
+          <img src="https://www.orbit.es/wp-content/uploads/2022/05/oddo-erp-crm-600x315-1.png" alt="Trulli" width="425" height="200"/>
+        </h3>
+        <div id="wrap" class="js_blog website_blog">
+          <br/>
+          <img src="https://www.conectasoftware.com/wp-content/uploads/2019/12/Odoo_conector-erp-crm-1-1300x867.jpg" alt="Trulli" width="100" height="50"/><a t-att-href="'/okw/function/edit'"><button type="button" class="btn btn-primary">+</button></a>
+          <hr/>
+        </div>
+        <h2 style="font-family: Georgia, serif;font-weight: bold;font-size: 1.5rem;color:purple;"> Descripción de una función:</h2>
+        <t t-foreach="parent_ids" t-as="parent">
+          <ul>
+            <li>
+              <t t-esc="parent.name" />
+              <t t-foreach="function_ids" t-as="function">
+                <t t-if="function.parent_id.id == parent.id">
+                  <ul>
+                    <a t-att-href="'/okw/function/form?id=%s'%str(function.id)">
+                      <li>
+                        <t t-esc="function.name" />
+                        <img src="https://cdn.goconqr.com/uploads/media/image/10365939/desktop_9437fed1-1195-41bf-8630-1af2dde59d8f.gif" alt="Trulli" width="35" height="20"/>
+                      </li>
+                    </a>
+                  </ul>
+                </t>
+              </t>
+            </li>
+          </ul>
+        </t>
+      </t>
+
+-------------------------
+
+    </template>
+  </data>
+</odoo>
